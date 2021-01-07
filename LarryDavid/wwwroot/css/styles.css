@@ -1,0 +1,11 @@
+body {
+  background-image: url(../img/larryjerry.jpeg);
+  background-size: 50%;
+}
+
+div.container {
+  text-align: center;
+  color: whitesmoke;
+}
+
+

@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model LarryDavid.Models.Theme
+
+<h2>Add a new joke</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Joke)
+  @Html.TextBoxFor(model => model.Joke)
+  <input type="submit" value="Add new joke"/>
+}

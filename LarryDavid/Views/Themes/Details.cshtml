@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model LarryDavid.Models.Theme
+
+<h2>Joke: @Html.DisplayFor(model => model.Joke)</h2>
+</hr>
+@if(Model.Episodes.Count == 0)
+{
+  <h3>No episodes relating to this joke.</h3>
+  <h4>@Html.ActionLink("+Episode", "Create", "Episodes")</h4>
+}
+else
+{
+  <h3>Episodic representations:</h3>
+  @foreach(var join in Model.Episodes)
+  {
+    <h4>@Html.ActionLink($"{join.Episode.SeasonEpisode}", "Details", "Episodes", new { id = join.Episode.EpisodeId})</h4>
+  }
+  <h4>@Html.ActionLink("+ another Episode", "Create", "Episodes")</h4>
+}

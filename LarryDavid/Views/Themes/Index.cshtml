@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@using LarryDavid.Models
+@model List<LarryDavid.Models.Theme>
+
+@if (Model.Count == 0)
+{
+  <h3>No running jokes.</h3>
+  <h4>@Html.ActionLink("+ your first Joke", "Create")</h4>
+}
+else
+{
+  <h3>Running Jokes:</h3>
+  <hr/>
+  @foreach(Theme theme in Model)
+  {
+    <h4>@Html.ActionLink($"{theme.Joke}", "Details", new { id = theme.ThemeId})</h4>
+  }
+  <h4>@Html.ActionLink("+Joke", "Create")</h4>
+}

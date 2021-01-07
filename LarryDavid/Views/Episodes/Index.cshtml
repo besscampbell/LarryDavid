@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@using LarryDavid.Models;
+@model List<LarryDavid.Models.Episode>
+
+@if (Model.Count == 0)
+{
+  <h3>No episodes yet.</h3>
+  <h4>@Html.ActionLink("+ your first episode", "Create")</h4>
+}
+else
+{
+  @foreach (Episode episode in Model)
+  {
+    <h4>@Html.ActionLink($"{episode.Show} {episode.SeasonEpisode}", "Details", new { id = episode.EpisodeId })</h4>
+  }
+}

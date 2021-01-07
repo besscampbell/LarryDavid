@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model LarryDavid.Models.Episode
+
+<h2>Add new episode</h2>
+
+@using(Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Show)
+  @Html.TextBoxFor(model => model.Show)
+
+  @Html.Label("Season/Episode use format: S01E23")
+  @Html.TextBoxFor(model => model.SeasonEpisode)
+
+  @Html.Label("Joke")
+  @Html.DropDownList("ThemeId")
+
+  <input type="submit" value="+Episode" class="btn btn-primary">
+}
