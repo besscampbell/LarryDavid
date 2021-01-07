@@ -40,5 +40,34 @@ namespace LarryDavid.Controllers
         .FirstOrDefault(theme => theme.ThemeId == id);
       return View(thisTheme);  
     }
+
+    public ActionResult Edit(int id)
+    {
+      var thisTheme = _db.Themes.FirstOrDefault(theme => theme.ThemeId == id);
+      return View(thisTheme);
+    }
+
+    [HttpPost]
+    public ActionResult Edit (Theme theme)
+    {
+      _db.Entry(theme).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Delete(int id)
+    {
+      var thisTheme = _db.Themes.FirstOrDefault(themes => themes.ThemeId == id);
+      return View(thisTheme);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisTheme = _db.Themes.FirstOrDefault(themes => themes.ThemeId == id);
+      _db.Themes.Remove(thisTheme);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }

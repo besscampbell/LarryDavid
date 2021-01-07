@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+
+@model LarryDavid.Models.Episode
+
+<h2>Are you sure you want to delete @Model.SeasonEpisode of @Model.Show ?</h2>
+
+@using(Html.BeginForm())
+{
+  <input value="Delete" type="submit">
+}
+

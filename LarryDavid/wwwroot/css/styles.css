@@ -1,11 +1,11 @@
 body {
-  background-image: url(../img/larryjerry.jpeg);
+  background-image: url(../img/intense_jarry.jpeg);
   background-size: 50%;
 }
 
 div.container {
   text-align: center;
-  color: whitesmoke;
+  color: rgb(121, 226, 245);
 }
 
 

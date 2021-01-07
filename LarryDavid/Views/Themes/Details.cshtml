@@ -5,18 +5,18 @@
 @model LarryDavid.Models.Theme
 
 <h2>Joke: @Html.DisplayFor(model => model.Joke)</h2>
-</hr>
+<br/>
 @if(Model.Episodes.Count == 0)
 {
   <h3>No episodes relating to this joke.</h3>
-  <h4>@Html.ActionLink("+Episode", "Create", "Episodes")</h4>
+  <h4>@Html.ActionLink("+Episode", "Create", "Episodes") | @Html.ActionLink("Delete Joke", "Delete", new { id = Model.ThemeId })</h4>
 }
 else
 {
   <h3>Episodic representations:</h3>
   @foreach(var join in Model.Episodes)
   {
-    <h4>@Html.ActionLink($"{join.Episode.SeasonEpisode}", "Details", "Episodes", new { id = join.Episode.EpisodeId})</h4>
+    <h4>@Html.ActionLink($"{join.Episode.Show} {join.Episode.SeasonEpisode}", "Details", "Episodes", new { id = join.Episode.EpisodeId})</h4>
   }
-  <h4>@Html.ActionLink("+ another Episode", "Create", "Episodes")</h4>
+  <h4>@Html.ActionLink("+ another Episode", "Create", "Episodes") | @Html.ActionLink("Update Joke", "Edit", new { id = Model.ThemeId }) | @Html.ActionLink("Delete Joke", "Delete", new { id = Model.ThemeId })</h4>
 }

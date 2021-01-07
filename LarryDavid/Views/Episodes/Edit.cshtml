@@ -4,20 +4,17 @@
 
 @model LarryDavid.Models.Episode
 
-<h2>Add new episode</h2>
+<h2>Update episode</h2>
 
 @using(Html.BeginForm())
 {
+  @Html.HiddenFor(model => model.EpisodeId)
+
   @Html.LabelFor(model => model.Show)
   @Html.TextBoxFor(model => model.Show)
-  <br/>
 
   @Html.Label("Season/Episode use format: S01E23")
   @Html.TextBoxFor(model => model.SeasonEpisode)
-  <br/>
 
-  @Html.Label("Joke")
-  @Html.DropDownList("ThemeId")
-  <br/>
-  <input type="submit" value="+Episode" class="btn btn-primary">
+  <input type="submit" value="Save" class="btn btn-primary">
 }

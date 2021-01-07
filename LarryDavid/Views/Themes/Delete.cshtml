@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+
+@model LarryDavid.Models.Theme
+
+<h2>Are you sure you want to delete @Model.Joke ?:</h2>
+
+@using (Html.BeginForm())
+{
+  <input type="submit" value="delete"/> 
+}
+

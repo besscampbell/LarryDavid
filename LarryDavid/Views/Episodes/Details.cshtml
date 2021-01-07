@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+}
+
+@model LarryDavid.Models.Episode
+<h2>Episode Details</h2>
+<h2>Show: @Html.DisplayFor(model => model.Show)</h2>
+<h2>Season & Episode: @Html.DisplayFor(model => model.SeasonEpisode)</h2>
+
+@if(Model.Themes.Count == 0)
+{
+  <h3>No jokes relating to this episode.</h3>
+  <h4>@Html.ActionLink("+Joke", "Create", "Themes")</h4>
+}
+else
+{
+  <h3>Jokes in this episode:</h3>
+  @foreach(var join in Model.Themes)
+  {
+    <h4>@Html.ActionLink($"{join.Theme.Joke}", "Details", "Themes", new { id = join.Theme.ThemeId}) </h4>
+  }
+  <h4>@Html.ActionLink("+ another Joke", "AddTheme", new {id = Model.EpisodeId}) | @Html.ActionLink("Update Episode", "Edit", new { id = Model.EpisodeId}) | @Html.ActionLink("Delete Episode", "Delete", new { id = Model.EpisodeId}) </h4>
+}

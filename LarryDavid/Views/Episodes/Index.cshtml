@@ -12,8 +12,11 @@
 }
 else
 {
+  <h2>Episodes:</h2>
   @foreach (Episode episode in Model)
   {
     <h4>@Html.ActionLink($"{episode.Show} {episode.SeasonEpisode}", "Details", new { id = episode.EpisodeId })</h4>
   }
+  <br/>
+  <h4>@Html.ActionLink("+ another episode", "Create")</h4>
 }

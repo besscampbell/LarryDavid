@@ -13,7 +13,7 @@
 else
 {
   <h3>Running Jokes:</h3>
-  <hr/>
+  <br/>
   @foreach(Theme theme in Model)
   {
     <h4>@Html.ActionLink($"{theme.Joke}", "Details", new { id = theme.ThemeId})</h4>
