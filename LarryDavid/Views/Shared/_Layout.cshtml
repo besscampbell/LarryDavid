@@ -7,20 +7,21 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
-    <nav class="navbar navbar-inverse">
-      <div class="containter-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">Larry Vs. Jerry</a>
-        </div>
+    <nav class="navbar navbar-expand-lg navbar-inverse bg-inverse">
+      <div class="container">
+        @Html.ActionLink("Larry vs Jerry", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <ul class="nav navbar-nav">
-          <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-          <li>@Html.ActionLink("Episodes", "Index", "Episodes")</li>       
-          <li>@Html.ActionLink("Jokes", "Index", "Themes")</li>
-        </ul>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav mr-auto">
+              <li class="nav-item">@Html.ActionLink("Episodes", "Index", "Episodes", null, new { @class = "nav-link" })</li>       
+              <li class="nav-item">@Html.ActionLink("Jokes", "Index", "Themes", null, new { @class = "nav-link" })</li>
+          </ul>
+        </div>
       </div>
     </nav>
-
     <div class="container">
       @RenderBody()
     </div>

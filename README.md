@@ -1,4 +1,4 @@
-# Jarry
+# Larry vs Jerry
 
 #### C# two day project for Epicodus to practice Many-to-Many relationships, 1.7.2020
 
@@ -121,6 +121,14 @@ _This application required use of the following programs/languages/libraries to 
 * _Entity Framework Core_
 * _[SQL Designer](https://ondras.zarovi.cz/sql/demo/)_
 
+## Known Bugs
+
+No known bugs.
+
+## Support and contact details
+
+Feel free to contact <bess.k.campbell@gmail.com> and <taylulzcode@gmail.com>
+
 ## License
 
-*Licensed under MIT* 
+MIT_ Copyright (c) 2020 *_Bess Campbell & Taylor Delph_*

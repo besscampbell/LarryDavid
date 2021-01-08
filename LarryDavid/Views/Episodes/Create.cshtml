@@ -6,18 +6,28 @@
 
 <h2>Add new episode</h2>
 
-@using(Html.BeginForm())
+@using(Html.BeginForm(new { htmlAttributes = new { @class = "form-vertical" }}))
 {
-  @Html.LabelFor(model => model.Show)
-  @Html.TextBoxFor(model => model.Show)
-  <br/>
-
-  @Html.Label("Season/Episode use format: S01E23")
-  @Html.TextBoxFor(model => model.SeasonEpisode)
-  <br/>
-
-  @Html.Label("Joke")
-  @Html.DropDownList("ThemeId")
-  <br/>
+  <div class="form-group">
+    @Html.LabelFor(model => model.Show)
+    <div>
+    @Html.TextBoxFor(model => model.Show, new { htmlAttributes = new { @class = "form-control" }})
+    </div>
+  </div>  
+  @* <br/> *@
+  <div class="form-group">
+    @Html.LabelFor(model => model.SeasonEpisode) 
+    <div>
+    @Html.TextBoxFor(model => model.SeasonEpisode, new { htmlAttributes = new { @class = "form-control" }})
+    </div>
+  </div>  
+  @* <br/> *@
+  <div class="form-group">
+    @Html.Label("Joke")
+    <div>
+    @Html.DropDownList("ThemeId")
+    </div>
+  </div> 
+  @* <br/> *@
   <input type="submit" value="+Episode" class="btn btn-primary">
 }
